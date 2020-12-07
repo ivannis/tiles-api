@@ -35,6 +35,9 @@ git clone git@github.com:ivannis/tiles-api.git
 cd tiles-api
 cp .env.example .env
 docker-compose build
+docker-compose up -d
+docker exec -it tiles-api bash
+composer install
 ```
 
 
@@ -43,7 +46,6 @@ docker-compose build
 Once installed, you can run the following commands to start server:
 
 ```
-docker-compose up -d
 docker exec -it tiles-api bash
 php bin/hyperf.php start
 # press CTRL + C to terminate the current process
