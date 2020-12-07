@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  tiles-api:
+    container_name: tiles-api
+    command: php -S 127.0.0.1:13300
+    build:
+      context: .
+    image: tiles-api:dev
+    ports:
+      - 9501:9501
+    volumes:
+      - .:/opt/www
+    networks:
+      - default
+
+networks:
+  default:
+    external: false
